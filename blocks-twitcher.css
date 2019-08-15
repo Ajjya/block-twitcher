@@ -1,0 +1,19 @@
+.block_twitched_top{
+	transform: translate3d(-1.9725px, -4.3887px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+	transform-style: preserve-3d;
+}
+
+.block_twitched_left{
+	transform: translate3d(3.2432px, -1.0806px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+	transform-style: preserve-3d;
+}
+
+.block_twitched_bottom{
+	transform: translate3d(-0.0964px, -4.1983px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+	transform-style: preserve-3d;
+}
+
+.block_twitched_right{
+	transform: translate3d(-0.3592px, 1.5709px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+	transform-style: preserve-3d;
+}
