@@ -1,22 +1,30 @@
 jQuery(document).ready(function($) {
 
-	function BlockTwitcher(el, move_el, speed, offsetXMoveEl, offsetYMoveEl){
+	function BlockTwitcher(el, move_el, properties){
 		this.el = el;
 		this.move_el = move_el;
-		// this.move_el_top = 0;
-		// this.move_el_left = 0;
+		this.speed = properties.speed ? properties.speed : '300ms';
 		this.directionX = "";
 		this.directionY = "";
 		this.oldx = 0;
 		this.oldy = 0;
 		this.base_class_name = 'block_twitched';
 		this.offset = 0;
-		this.offsetXMoveEl = 0;
-		this.offsetYMoveEl = 0;
+		this.offsetXMoveEl = properties.offsetXMoveEl ? properties.offsetXMoveEl : 0;
+		this.offsetYMoveEl = properties.offsetYMoveEl ? properties.offsetYMoveEl : 0;
 
 		this.init = function(){
 			var obj = this;
 
+			if(this.move_el){
+				this.move_el.style.position = "relative";
+				this.move_el.style.top = '0px';
+				this.move_el.style.left = '0px';
+				this.move_el.style.webkitTransition = 'top ' + this.speed + ' ease, left ' + this.speed + ' ease';
+				this.move_el.style.mozTransition = 'top ' + this.speed + ' ease, left ' + this.speed + ' ease';
+				this.move_el.style.transition = 'top ' + this.speed + ' ease, left ' + this.speed + ' ease';
+			}
+			
 			this.refresh();
 
 			this.el.onmouseenter = function(e) {
@@ -30,10 +38,6 @@ jQuery(document).ready(function($) {
 
 		this.refresh = function(){
 			this.offset = this.getCoords(this.el);
-			this.move_el.style.position = "relative";
-			this.move_el.style.top = '0px';
-			this.move_el.style.left = '0px';
-			this.move_el.style.transition = 'top ' + speed + ' ease, left ' + speed + ' ease';
 		}
 	} 
 
@@ -41,8 +45,11 @@ jQuery(document).ready(function($) {
 		var x = e.pageX - this.offset.left;
 		var y = e.pageY - this.offset.top;
 
-		this.move_el.style.top = -y/10 + 'px';
-		this.move_el.style.left = (-x + this.offsetXMoveEl)/10 + 'px';
+		if(this.move_el){
+			this.move_el.style.top = (-y + this.offsetYMoveEl)/10 + 'px';
+			this.move_el.style.left = (-x + this.offsetXMoveEl)/10 + 'px';
+		}
+		
 	}
 
 	BlockTwitcher.prototype.onMouseEnterHandler = function (e) {
@@ -72,8 +79,10 @@ jQuery(document).ready(function($) {
 		var obj = this;
 		this.removeClasses();
 		this.el.removeEventListener( "mousemove", (e) => { obj.onMouseMoveHandler(e, obj) });	
-		this.move_el.style.top = 0;
-		this.move_el.style.left = 0;
+		if(this.move_el){
+			this.move_el.style.top = 0;
+			this.move_el.style.left = 0;
+		}
 	}
 
 	BlockTwitcher.prototype.addClass = function (name) {
