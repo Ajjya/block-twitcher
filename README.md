@@ -87,4 +87,4 @@ If you found a bug or have a feature suggestion, please submit it in the [Issues
 The plugin is available under the [MIT licens](http://opensource.org/licenses/MIT).
 ## Video example
 You can download video example here:
-https://github.com/Ajjya/block-twitcher/blob/master/ice_video_20190911-130845.mp4
+https://github.com/Ajjya/text-dropper-animation/blob/master/ice_video_20190911-130603.mp4
