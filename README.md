@@ -10,6 +10,7 @@
 * [Browser support](#browser-support)
 * [Support](#support)
 * [License](#license)
+* [Code example](#code-example)
 ## Use
 This library use plain javascript and css.
 ## Requirements
@@ -84,3 +85,6 @@ Use script for each block needed.
 If you found a bug or have a feature suggestion, please submit it in the [Issues tracker](https://github.com/Ajjya/block-twitcher/issues).
 ## License
 The plugin is available under the [MIT licens](http://opensource.org/licenses/MIT).
+## Video example
+You can download video example here:
+https://github.com/Ajjya/block-twitcher/blob/master/ice_video_20190911-130845.mp4
